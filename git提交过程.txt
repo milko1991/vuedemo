@@ -18,4 +18,4 @@
 1、进入要添加的文件目录里
 2、git add 文件名.xx
 3、git commit -m ‘随意’
-4、git push origin master
+4、git push -u origin master
