@@ -1,17 +1,17 @@
 <template>
 	<div class="headerBar">
 		<wearther></wearther>
-		 <ul>
+		 <ul class="headerList">
 		 	<router-link to='/'><li>首页</li></router-link>
 	    	<router-link to='/news'><li>新闻</li></router-link>
  	        <router-link to='/map'><li>地图</li>	</router-link>
-	        <router-link to='/login'><li>登录</li>	</router-link>
+	        <router-link to=''><li>登录</li>	</router-link>
 	        <router-link to='/more'><li :class="{'btn-primary': moreshow}" @mouseenter="toggleShow()"><div v-text="moreText"></div></li></router-link>
     	</ul>
     	<div class="more-Show animated" :class="{'fadeIn': tofalse}" v-show="moreshow" @mouseleave="toggleShow()">
 			<h4>更多产品</h4>
-			<ul v-for="showlist in showitems">
-				<li>
+			<ul>
+				<li v-for="showlist in showitems">
 					<img :src="showlist.imgsrc" :title="showlist.comment">
 					<span>{{ showlist.comment }}</span>
 				</li>
@@ -36,13 +36,13 @@ export default {
 	},
 	computed: {
 		showitems() {
-			return this.$store.state.list;
+			return this.$store.state.homeState.list;
 		}
 	},
 	methods: {
-			toggleShow() {
-				this.moreshow = !this.moreshow;
-			}
+		toggleShow() {
+			this.moreshow = !this.moreshow;
+		}
 	},
 	watch: {
 		moreshow(newVal) {

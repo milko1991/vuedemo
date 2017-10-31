@@ -7,26 +7,53 @@
 				<button @click="btnSearch">百度一下</button>
 			</div>
 		</nav>
-		<div class="scrollSearch animated" :class="{'fadeIn': scrollShow}" v-show="scrollShow"></div>
+		<div class="scrollSearch animated" :class="{'fadeIn': scrollShow}" v-show="scrollShow">
+			<img src="../images/baidu.png" width="150" />
+		</div>
+		<div class="pageList">
+			<ul class="listUl">
+				<li @click="toggleList(index,listview.view)" v-for="(listview,index) in pageList" :class="{active: active == index}">{{listview.title}}</li>
+			</ul>
+			<componentlist :propsList="currentView"></componentlist>
+		</div>
 	</div>
 </template>
 
 <script>
+	import Componentlist from '../components/componentList.vue'
+
 	export default{
 		data() {
 			return {
 				searchInput : '',
 				toshow : '',
 				scroll : '',
-				scrollShow : false
+				currentView : 'child2',
+				scrollShow : false,
+				active: 1,
+				pageList : [
+					{
+						title: '我的关注',
+						view: 'child1'
+					},{
+						title: '推荐',
+						view: 'child2'
+					},{
+						title: '导航',
+						view: 'child3'
+					}
+				]
 			}
 		},
+		components: {
+	  		'componentlist' : Componentlist
+	  	},
 		mounted() {
 				window.addEventListener('scroll', this.screenTop);
 		},
 		computed : {
 			plan() {
-				return this.$store.state.name;
+				return this.$store.state.homeState.name;
 			},
 		},
 		watch: {
@@ -57,6 +84,10 @@
 					this.scrollShow = false
 				}
 			},
+			toggleList(i,v) {
+				this.active = i;
+				this.currentView = v;
+			}
 		}
 	};
 </script>
