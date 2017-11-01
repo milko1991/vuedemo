@@ -1,7 +1,7 @@
 <template>
 	<div class="headerBar">
 		<wearther></wearther>
-		 <ul class="headerList">
+		<ul class="headerList">
 		 	<router-link to='/'><li>首页</li></router-link>
 	    	<router-link to='/news'><li>新闻</li></router-link>
  	        <router-link to='/map'><li>地图</li>	</router-link>
@@ -22,32 +22,32 @@
 
 <script>
 	import Wearther from '../components/wearther.vue'
-export default {
+	export default {
 //name: 'toHeader',
-	data() {
-		return {
-			moreshow: false,
-			tofalse: false,
-			moreText: '更多产品'
-		}
-	},
-	components: {
-		'wearther': Wearther,
-	},
-	computed: {
-		showitems() {
-			return this.$store.state.homeState.list;
-		}
-	},
-	methods: {
-		toggleShow() {
-			this.moreshow = !this.moreshow;
-		}
-	},
-	watch: {
-		moreshow(newVal) {
-		 	newVal ? this.moreText = '欢迎查看' : this.moreText = '更多产品'
+		data() {
+			return {
+				moreshow: false,
+				tofalse: false,
+				moreText: '更多产品'
+			}
+		},
+		components: {
+			'wearther': Wearther,
+		},
+		computed: {
+			showitems() {
+				return this.$store.state.homeState.list;
+			}
+		},
+		methods: {
+			toggleShow() {
+				this.moreshow = !this.moreshow;
+			}
+		},
+		watch: {
+			moreshow(newVal) {
+			 	newVal ? this.moreText = '欢迎查看' : this.moreText = '更多产品'
+			}
 		}
 	}
-}
 </script>

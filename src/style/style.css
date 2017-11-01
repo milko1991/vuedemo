@@ -94,9 +94,9 @@ body {
 }
 .headerBar {
   padding: 10px 0;
-  width: 100%;
   height: 44px;
   border-bottom: 1px double #F0F0F0;
+  min-width: 700px;
 }
 .headerBar ul.headerList {
   float: right;
@@ -234,7 +234,7 @@ nav + .scrollSearch img {
 .pageList .panel-body .nav-left ul li {
   border-bottom: 1px double #F0F0F0;
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 0;
   text-align: left;
 }
 .pageList .panel-body .nav-left ul li .pull-right {
@@ -257,6 +257,11 @@ nav + .scrollSearch img {
   height: 120px;
   float: left;
   margin: 0 1px;
+  transform: sscale(1);
+  transition: .4s ease-in-out;
+}
+.pageList .panel-body .nav-left ul li img:hover {
+  transform: scale(1.2) rotate(360deg);
 }
 .pageList .panel-body .nav-left ul li .dress {
   line-height: 15px;
@@ -265,11 +270,20 @@ nav + .scrollSearch img {
   margin-top: 10px;
 }
 .pageList .panel-body .nav-right {
-  width: 350px;
+  width: 290px;
   position: absolute;
-  right: 0;
-  top: 0;
-  margin: 15px;
+  right: 15px;
+  top: 15px;
+  text-align: left;
+  line-height: 35px;
+}
+.pageList .panel-body .nav-right ul li {
+  width: 145px;
+  white-space: nowrap;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
 }
 .more-Show {
   height: 100%;

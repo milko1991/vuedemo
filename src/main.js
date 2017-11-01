@@ -16,24 +16,22 @@ import './style/animate.css'
 
 //import '!style-loader!css-loader!less-loader!./style/style.less'
 
-
-
 Vue.use(VueRouter)
 
 const router = new VueRouter({
 	routes: [
     {
-      path: '/',
-      component: Home,
+      	path: '/',
+      	component: Home,
     },{
-      path: '/map',
-      component : Map
+      	path: '/map',
+      	component : Map,
     },{
-      path: '/news',
-      component : News
+      	path: '/news',
+      	component : News
     },{
-      path: '/more',
-      component : More
+      	path: '/more',
+      	component : More
     }
   ]
 })

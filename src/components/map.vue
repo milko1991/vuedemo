@@ -1,6 +1,6 @@
 <template>
 	<div>
-		地图
+		<router-link to='/'>地图</router-link>
 	</div>
 </template>
 

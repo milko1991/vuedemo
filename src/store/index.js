@@ -26,56 +26,105 @@ const state = {
 		    comment : '文库'
 		}]
 	},
-	recomendList: [{
+	recomendList: [[{
 		comment : 'iPhone X国行版入手：有人模仿我的脸？',
 		imgList : [
 			require('../images/groom/apple1.jpg'),
 			require('../images/groom/apple2.jpg'),
 			require('../images/groom/apple3.jpg'),
-		],
-		dress : "苹果官网",
-		time : '10-31 12:31'
-	},{
-		comment : 'iPhone X国行版入手：有人模仿我的脸？',
-		imgList : [
-			require('../images/groom/apple1.jpg'),
-		],
-		dress : "苹果官网",
-		time : '10-31 12:31'
-	},{
-		comment : 'iPhone X国行版入手：有人模仿我的脸？',
-		imgList : [
-		],
-		dress : "苹果官网",
-		time : '10-31 12:31'
-	},{
-		comment : 'iPhone X国行版入手：有人模仿我的脸？',
-		imgList : [
-			require('../images/groom/apple1.jpg'),
-			require('../images/groom/apple2.jpg'),
-			require('../images/groom/apple3.jpg'),
-		],
-		dress : "苹果官网",
-		time : '10-31 12:31'
-	},{
-		comment : 'iPhone X国行版入手：有人模仿我的脸？',
-		imgList : [
-			require('../images/groom/apple1.jpg'),
-			require('../images/groom/apple2.jpg'),
-			require('../images/groom/apple3.jpg'),
-		],
-		dress : "苹果官网",
-		time : '10-31 12:31'
-	},{
-		comment : 'iPhone X国行版入手：有人模仿我的脸？',
-		imgList : [
-			require('../images/groom/apple1.jpg'),
-			require('../images/groom/apple2.jpg'),
-			require('../images/groom/apple3.jpg'),
-		],
-		dress : "苹果官网",
-		time : '10-31 12:31'
-	}]
+			],
+			dress : "苹果官网",
+			time : '10-31 12:31'
+		},{
+			comment : 'iPhone X国行版入手：有人模仿我的脸？',
+			imgList : [
+				require('../images/groom/apple1.jpg'),
+			],
+			dress : "苹果官网",
+			time : '10-31 12:31'
+		},{
+			comment : 'iPhone X国行版入手：有人模仿我的脸？',
+			imgList : [
+			],
+			dress : "苹果官网",
+			time : '10-31 12:31'
+		},{
+			comment : 'iPhone X国行版入手：有人模仿我的脸？',
+			imgList : [
+				require('../images/groom/apple1.jpg'),
+				require('../images/groom/apple2.jpg'),
+				require('../images/groom/apple3.jpg'),
+			],
+			dress : "苹果官网",
+			time : '10-31 12:31'
+		},{
+			comment : 'iPhone X国行版入手：有人模仿我的脸？',
+			imgList : [
+				require('../images/groom/apple1.jpg'),
+				require('../images/groom/apple2.jpg'),
+				require('../images/groom/apple3.jpg'),
+			],
+			dress : "苹果官网",
+			time : '10-31 12:31'
+		},{
+			comment : 'iPhone X国行版入手：有人模仿我的脸？',
+			imgList : [
+				require('../images/groom/apple1.jpg'),
+				require('../images/groom/apple2.jpg'),
+				require('../images/groom/apple3.jpg'),
+			],
+			dress : "苹果官网",
+			time : '10-31 12:31'
+		}],[{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		},{
+			title: '众里寻他千百度',
+			href : 'http://www.baidu.com/'
+		}]
+	]
     
 };
 

@@ -7,7 +7,7 @@
 			<div class="nav-left">
 				<div class="tit"><span>以下信息根据您的兴趣推荐</span></div>
 				<ul>
-					<li v-for="recod in recomList">
+					<li v-for="recod in recomLeftList">
 						<div v-if="recod.imgList.length == 1">
 							<div class="pull-right">
 								<span>
@@ -30,9 +30,11 @@
 				</ul>
 			</div>
 			<div class="nav-right">
-				111
+				<strong>实时热点</strong>
+				<ul>
+					<li v-for="list in recomRightList"><a :href="list.href">{{list.title}}</a></li>
+				</ul>				
 			</div>
-			
 		</div>
 		<div v-if="propsList == 'child3'" >
 			child3
@@ -48,10 +50,23 @@
 			}
 		},
 		props: ['propsList'],
+//		props: {
+//		  status: {
+//		    type: String,
+//		    required: true,
+//		    validator: function (value) {
+//		      return [
+//		        'propsList'
+//		      ].indexOf(value) !== -1
+//		    }
+//		  }
+//		},
 		computed : {
-			recomList() {
-				console.log(this.$store.state.recomendList)
-				return this.$store.state.recomendList;
+			recomLeftList() {
+				return this.$store.state.recomendList[0];
+			},
+			recomRightList() {
+				return this.$store.state.recomendList[1];
 			}
 		}
 	})

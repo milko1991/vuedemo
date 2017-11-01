@@ -1,6 +1,6 @@
 <template>
 	<div class="pull-left">
-		 <iframe width="280" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
+		<iframe id="fancybox-frame" height="25" name="fancybox-frame1509520465192" frameborder="0" scrolling="no" hspace="0"  src="http://i.tianqi.com/index.php?c=code&a=getcode&id=34&h=25&w=280"></iframe>
 	</div>
 </template>
 
