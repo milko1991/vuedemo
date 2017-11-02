@@ -1,9 +1,15 @@
 <template>
 	<div class="panel-body">
-		<div v-if="propsList == 'child1'" >
-			child1
+		<div class="myWorkList" v-if="propsHomeList == 'child1'" >
+			<dl v-for="(monthList,indexs) in homeOneList">
+				<dt>{{homeOneList[indexs].theMonth}}</dt>
+				<dd v-for="(list,index) in homeOneList[indexs].datails">
+					<h4>{{(index + 1 ) + "、" + list.projects}}</h4>
+					<span v-for="(work,index) in list.work">{{(index + 1) + "、" + work}}</span>
+				</dd>
+			</dl>
 		</div>
-		<div class="recommend" v-if="propsList == 'child2'" >
+		<div class="recommend" v-if="propsHomeList == 'child2'" >
 			<div class="nav-left">
 				<div class="tit"><span>以下信息根据您的兴趣推荐</span></div>
 				<ul>
@@ -36,7 +42,7 @@
 				</ul>				
 			</div>
 		</div>
-		<div v-if="propsList == 'child3'" >
+		<div v-if="propsHomeList == 'child3'" >
 			child3
 		</div>
 	</div>
@@ -49,24 +55,26 @@
 				
 			}
 		},
-		props: ['propsList'],
-//		props: {
-//		  status: {
-//		    type: String,
-//		    required: true,
+		props: {
+		  propsHomeList: {
+		    type: String,
+		    required: true,
 //		    validator: function (value) {
 //		      return [
 //		        'propsList'
 //		      ].indexOf(value) !== -1
 //		    }
-//		  }
-//		},
+		  }
+		},
 		computed : {
 			recomLeftList() {
 				return this.$store.state.recomendList[0];
 			},
 			recomRightList() {
 				return this.$store.state.recomendList[1];
+			},
+			homeOneList() {
+				return this.$store.state.homeOneList;
 			}
 		}
 	})

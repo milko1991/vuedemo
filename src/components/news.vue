@@ -1,41 +1,55 @@
 <template>
-	<div id="news">
-		<input v-model.number="number" type="number" step="20" />
-		<p>{{ animatedNumber }}</p>
+	<div id="getAjson">
+		<div v-for=""></div>
 	</div>
 </template>
 
 <script>
+	import cheerio from 'cheerio'
+	import http from 'http'
+	import iconv from 'iconv-lite'
+	
 	export default({
-		data (){
+		data() {
 			return {
-				number: 0,
-				animatedNumber: 0
+				recommendData: [],
 			}
 		},
-		watch: {
-			number (newValue, oldValue) {
-			    var vm = this;
-			    function animate () {
-			        if (TWEEN.update()) {
-			            requestAnimationFrame(animate);
-			      	}
-			    }
-			    new TWEEN.Tween({ tweeningNumber: oldValue })
-			      	.easing(TWEEN.Easing.Quadratic.Out)
-			       	.to({ tweeningNumber: newValue }, 500)
-			       	.onUpdate(function () {
-			        vm.animatedNumber = this.tweeningNumber.toFixed(0)
-			       	})
-			       	.start();
-			    
-			    animate();
+		created() {
+			this.fetchData();
+		},
+		methods: {
+			fetchData() {
+				var url = 'http://www.ygdy8.net/html/gndy/dyzz/index.html';
+				http.get(url, function(sres) {
+					var chunks = [];
+					sres.on('data', function(chunk) {
+						chunks.push(chunk);
+					});
+					// chunks里面存储着网页的 html 内容，将它zhuan ma传给 cheerio.load 之后
+					// 就可以得到一个实现了 jQuery 接口的变量，将它命名为 `$`
+					// 剩下就都是 jQuery 的内容了
+					sres.on('end', function() {
+						var titles = [];
+						//由于咱们发现此网页的编码格式为gb2312，所以需要对其进行转码，否则乱码
+						//依据：“<meta http-equiv="Content-Type" content="text/html; charset=gb2312">”
+						var html = iconv.decode(Buffer.concat(chunks), 'gb2312');
+						var $ = cheerio.load(html, {
+							decodeEntities: false
+						});
+						$('.co_content8 .ulink').each(function(idx, element) {
+							var $element = $(element);
+							titles.push({
+								title: $element.text()
+							})
+						})
+						console.log(titles);
+					});
+				});
 			}
 		}
-		
 	})
 </script>
-
 <style>
-	#news input[type='number'] {width: 200px; height: 30px; border: 1px double #E0E0E0;}
+
 </style>

@@ -9,6 +9,8 @@ import Map from './components/map.vue'
 import News from './components/news.vue'
 import More from './components/more.vue'
 
+
+
 //import '../src/script/tween.js'
 
 import './style/style.less'
@@ -17,6 +19,8 @@ import './style/animate.css'
 //import '!style-loader!css-loader!less-loader!./style/style.less'
 
 Vue.use(VueRouter)
+
+
 
 const router = new VueRouter({
 	routes: [

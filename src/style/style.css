@@ -67,7 +67,6 @@ select:focus {
 }
 html,
 body {
-  height: 2000px;
   width: 100%;
   font-size: 14px;
   background-size: 100% 100%;
@@ -284,6 +283,19 @@ nav + .scrollSearch img {
   overflow: hidden;
   text-overflow: ellipsis;
   float: left;
+}
+.pageList .panel-body .myWorkList {
+  text-align: left;
+  line-height: 30px;
+}
+.pageList .panel-body .myWorkList dl dt {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.pageList .panel-body .myWorkList dl dd span {
+  display: block;
+  text-indent: 2em;
 }
 .more-Show {
   height: 100%;
