@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<nav class="clear" id="navHome">
-			<img src="../images/baidu.png" width="270" />
+			<img src="../images/baidu.png" class="logo" />
 			<div class="search-input">
 				<input type="text" value="" placeholder="" v-model="searchInput" />
 				<button @click="btnSearch">百度一下</button>
@@ -21,17 +21,15 @@
 
 <script>
 	import Componentviewlist from '../components/componentList.vue'
-
-
 	export default {
 		data() {
 			return {
 				searchInput: '',
 				toshow: '',
 				scroll: '',
-				currentView: 'child1',
+				currentView: 'child2',
 				scrollShow: false,
-				active: 0,
+				active: 1,
 				pageList: [{
 					title: '我的工作',
 					view: 'child1'
@@ -63,8 +61,8 @@
 					this.timer = true
 					let that = this
 					setTimeout(function() {
-						that.screenTop
-						that.timer = false
+						that.screenTop;
+						that.timer = false;
 					}, 400)
 				}
 			}

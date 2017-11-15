@@ -1,16 +1,20 @@
 <template>
 	<div id="news">
-		<input v-model.number="number" type="number" step="20" />
-		<p>{{ animatedNumber }}</p>
+    <div v-show="false">
+      <input v-model.number="number" type="number" step="20" />
+      <p>{{ animatedNumber }}</p>
+    </div>
+    <vueSimple ></vueSimple>
 	</div>
 </template>
 
 <script>
+  import vueSimple from './simpleTest/index.vue'
 	export default({
 		data (){
 			return {
 				number: 0,
-				animatedNumber: 0
+				animatedNumber: 0,
 			}
 		},
 		watch: {
@@ -20,7 +24,7 @@
 			        if (TWEEN.update()) {
 			            requestAnimationFrame(animate);
 			      	}
-			    }
+			    };
 			    new TWEEN.Tween({ tweeningNumber: oldValue })
 			      	.easing(TWEEN.Easing.Quadratic.Out)
 			       	.to({ tweeningNumber: newValue }, 500)
@@ -28,11 +32,16 @@
 			        vm.animatedNumber = this.tweeningNumber.toFixed(0)
 			       	})
 			       	.start();
-			    
+
 			    animate();
 			}
-		}
-		
+		},
+    methods: {
+
+    },
+    components: {
+		  'vueSimple' : vueSimple
+    }
 	})
 </script>
 

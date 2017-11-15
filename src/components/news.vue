@@ -8,19 +8,29 @@
 	import cheerio from 'cheerio'
 	import http from 'http'
 	import iconv from 'iconv-lite'
-	
+	import axios from 'axios'
+
 	export default({
 		data() {
 			return {
-				recommendData: [],
 			}
 		},
 		created() {
 			this.fetchData();
 		},
+		mounted (){
+ 			axios.get('/static/json/index.json').then(response => {
+                console.log(response)
+            }, response => {
+                // error callback
+            })
+		},
 		methods: {
 			fetchData() {
+				var fs = require('fs');
+				var request = require('request');
 				var url = 'http://www.ygdy8.net/html/gndy/dyzz/index.html';
+
 				http.get(url, function(sres) {
 					var chunks = [];
 					sres.on('data', function(chunk) {
@@ -46,6 +56,9 @@
 						console.log(titles);
 					});
 				});
+			},
+			createImg() {
+				
 			}
 		}
 	})

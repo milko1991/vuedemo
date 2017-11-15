@@ -4,38 +4,38 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import store from './store/index.js'
-import Home from './components/home.vue'
-import Map from './components/map.vue'
-import News from './components/news.vue'
-import More from './components/more.vue'
-
-
-
-//import '../src/script/tween.js'
+// import Tost from '../static/script/tost'
 
 import './style/style.less'
 import './style/animate.css'
 
+//less另类引入方式
 //import '!style-loader!css-loader!less-loader!./style/style.less'
 
-Vue.use(VueRouter)
+//懒加载具名化
+//r => require.ensure([], () => r(require('./components/home.vue')), 'header-home'),
 
+Vue.use(VueRouter)
+// Vue.use(Tost)
 
 
 const router = new VueRouter({
 	routes: [
     {
       	path: '/',
-      	component: Home,
+      	component: resolve => require(['./components/home.vue'], resolve)
+    },{
+	      path: '/canvas',
+        component: resolve => require(['./components/canvas.vue'], resolve)
     },{
       	path: '/map',
-      	component : Map,
+      	component : resolve => require(['./components/map.vue'], resolve)
     },{
       	path: '/news',
-      	component : News
+      	component : resolve => require(['./components/news.vue'], resolve)
     },{
       	path: '/more',
-      	component : More
+      	component : resolve => require(['./components/more.vue'], resolve)
     }
   ]
 })

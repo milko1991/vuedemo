@@ -1,33 +1,49 @@
 <template>
 	<div class="headerBar">
-		<wearther></wearther>
-		<ul class="headerList">
-		 	<router-link to='/'><li>首页</li></router-link>
-	    	<router-link to='/news'><li>新闻</li></router-link>
- 	        <router-link to='/map'><li>地图</li>	</router-link>
-	        <router-link to=''><li>登录</li>	</router-link>
-	        <router-link to='/more'><li :class="{'btn-primary': moreshow}" @mouseenter="toggleShow()"><div v-text="moreText"></div></li></router-link>
-    	</ul>
-    	<div class="more-Show animated" :class="{'fadeIn': tofalse}" v-show="moreshow" @mouseleave="toggleShow()">
-			<h4>更多产品</h4>
-			<ul>
-				<li v-for="showlist in showitems">
-					<img :src="showlist.imgsrc" :title="showlist.comment">
-					<span>{{ showlist.comment }}</span>
-				</li>
-			</ul>
-		</div>
+      <wearther></wearther>
+      <ul class="headerList">
+          <li :class="{'btn-primary': links.hrefLink == 'more','active' : $route.path == links.hrefLink}" v-for="links in toLink">
+            <div v-if="links.hrefLink == '/more'">
+              <div v-text="moreText" @mouseenter="toggleShow()"></div>
+            </div>
+            <span v-else>
+              <router-link :class="{'active' : $route.path == 'links.hrefLink'}" :to="links.hrefLink">{{links.title}}</router-link>
+            </span>
+          </li>
+      </ul>
+      <div class="more-Show animated" :class="{'fadeIn': tofalse}" v-show="moreshow" @mouseleave="toggleShow()">
+        <h4>欢迎查看</h4>
+        <ul>
+          <li v-for="showlist in showitems">
+            <img :src="showlist.imgsrc" :title="showlist.comment">
+            <span>{{ showlist.comment }}</span>
+          </li>
+        </ul>
+      </div>
 	</div>
 </template>
 
 <script>
 	import Wearther from '../components/wearther.vue'
 	export default {
-//name: 'toHeader',
 		data() {
 			return {
 				moreshow: false,
 				tofalse: false,
+        toLink : [
+          {
+            title: 'HOME', hrefLink : '/'
+          },{
+            title: 'NEWS', hrefLink : '/news'
+          },{
+            title: 'VUE' , hrefLink : '/map'
+          },{
+            title: 'CANVAS' , hrefLink : '/canvas'
+          },{
+            title: 'MORE', hrefLink : '/more'
+          }
+
+        ],
 				moreText: '更多产品'
 			}
 		},
