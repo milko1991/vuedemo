@@ -18,11 +18,22 @@
 1、进入要添加的文件目录里
 2、git add 文件名.xx
 3、git commit -m ‘随意’
-4、git push -u origin master
+4、git push origin master
+
 
 文件全部更新
 1、git remote rm origin
 2、git remote add origin git@github.com:milko1991/vuedemo.git
 3、git pull origin master
 4、git add .
-5、git push -u origin master
+5、git commit -m ‘随意’
+6、git push -u origin master
+
+文件全部更新
+1、git remote rm origin
+2、git remote add origin git@github.com:milko1991/vuedemo.git
+3、git pull origin master
+4、git add 文件名.xxx
+5、git commit -m ‘随意’
+6、git push origin master
+
