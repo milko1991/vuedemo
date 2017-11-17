@@ -1,39 +1,30 @@
-1¡¢´´½¨ÎÄ¼ş¼Ğ£¬½øÈëÎÄ¼ş¼ĞÀïÃæ
-2¡¢git init
-3¡¢git remote add origin git@github.com:milko1991/vuedemo.git
-	Èç¹û±¨´í£ºÏÈ $ git remote rm origin
-4¡¢git pull origin master
-5¡¢touch ÎÄ¼şÃû.xx
-6¡¢git add .
-7¡¢git commit -m ¡®ËæÒâ¡¯
-8¡¢git push -u origin master
+1ã€åˆ›å»ºæ–‡ä»¶å¤¹ï¼Œè¿›å…¥æ–‡ä»¶å¤¹é‡Œé¢
+2ã€git init
+3ã€git remote add origin git@github.com:milko1991/vuedemo.git
+	å¦‚æœæŠ¥é”™ï¼šå…ˆ $ git remote rm origin
+4ã€git pull origin master
+5ã€touch æ–‡ä»¶å.xx
+6ã€git add .
+7ã€git commit -m â€˜éšæ„â€™
+8ã€git push -u origin master
 
 
-Ìí¼Ó×î½ü¸üĞÂÎÄ¼ş
-1¡¢git add -u
-2¡¢git commit -m ¡®ËæÒâ¡¯
-3¡¢git push -u origin master
+æ·»åŠ æœ€è¿‘æ›´æ–°æ–‡ä»¶
+1ã€git add -u
+2ã€git commit -m â€˜éšæ„â€™
+3ã€git push -u origin master
 
-Ìí¼ÓÒ»¸öÎÄ¼ş
-1¡¢½øÈëÒªÌí¼ÓµÄÎÄ¼şÄ¿Â¼Àï
-2¡¢git add ÎÄ¼şÃû.xx
-3¡¢git commit -m ¡®ËæÒâ¡¯
-4¡¢git push origin master
+æ·»åŠ ä¸€ä¸ªæ–‡ä»¶
+1ã€è¿›å…¥è¦æ·»åŠ çš„æ–‡ä»¶ç›®å½•é‡Œ
+2ã€git add æ–‡ä»¶å.xx
+3ã€git commit -m â€˜éšæ„â€™
+4ã€git push origin master
 
-
-ÎÄ¼şÈ«²¿¸üĞÂ
-1¡¢git remote rm origin
-2¡¢git remote add origin git@github.com:milko1991/vuedemo.git
-3¡¢git pull origin master
-4¡¢git add .
-5¡¢git commit -m ¡®ËæÒâ¡¯
-6¡¢git push -u origin master
-
-ÎÄ¼şÈ«²¿¸üĞÂ
-1¡¢git remote rm origin
-2¡¢git remote add origin git@github.com:milko1991/vuedemo.git
-3¡¢git pull origin master
-4¡¢git add ÎÄ¼şÃû.xxx
-5¡¢git commit -m ¡®ËæÒâ¡¯
-6¡¢git push origin master
+æ–‡ä»¶å…¨éƒ¨æ›´æ–°
+1ã€git remote rm origin
+2ã€git remote add origin git@github.com:milko1991/vuedemo.git
+3ã€git pull origin master
+4ã€git add æ–‡ä»¶å.xxx
+5ã€git commit -m â€˜éšæ„â€™
+6ã€git push origin master
 
