@@ -34,7 +34,7 @@
           {
             title: 'HOME', hrefLink : '/'
           },{
-            title: 'NEWS', hrefLink : '/news'
+            title: 'AXIOS', hrefLink : '/axios'
           },{
             title: 'VUE' , hrefLink : '/map'
           },{

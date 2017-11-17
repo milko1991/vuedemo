@@ -31,7 +31,7 @@ const router = new VueRouter({
       	path: '/map',
       	component : resolve => require(['./components/map.vue'], resolve)
     },{
-      	path: '/news',
+      	path: '/axios',
       	component : resolve => require(['./components/news.vue'], resolve)
     },{
       	path: '/more',
