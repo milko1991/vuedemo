@@ -17,12 +17,11 @@
   import http from 'http'
   import iconv from 'iconv-lite'
   import axios from 'axios'
-
   export default ({
     data() {
       return {
         articles: [],
-        moviesTitle : []
+        moviesTitle : [],
       }
     },
     created() {

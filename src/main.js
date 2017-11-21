@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import store from './store/index.js'
+import '../static/script/base'
 // import Tost from '../static/script/tost'
 
 import './style/style.less'
@@ -40,7 +41,7 @@ const router = new VueRouter({
   ]
 })
 
-var app = new Vue({
+new Vue({
   el: '#app',
   store,
   router,

@@ -86,52 +86,36 @@ const state = {
 			time : '10-31 12:31'
 		}],[{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		},{
 			title: '众里寻他千百度',
-			href : 'http://www.baidu.com/'
 		}]
 	],
     homeOneList : [{
