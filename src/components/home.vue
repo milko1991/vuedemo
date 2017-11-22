@@ -69,8 +69,6 @@
 		},
 		methods: {
 			btnSearch() {
-				//this.toshow = this.searchInput;
-				const self = this;
 				this.$http.get({
 
 				})

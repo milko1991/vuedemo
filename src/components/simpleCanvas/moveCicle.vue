@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <canvas id="canvas" width="860" height="500"></canvas>
   </div>
 </template>
@@ -9,17 +10,20 @@
 </style>
 
 <script>
+  //isPointPath()方法返回true，如果指定的点位于当前路径中；否则返回false
   export default ({
     data() {
       return {
         timer: '',
+        people:['三姑','四婶','五叔','六姨','七舅姥爷']
       }
     },
     beforeDestroy() {
       window.cancelAnimationFrame(this.timer);
-//         clearInterval(this.timer);
     },
-    methods: {},
+    methods: {
+
+    },
     mounted() {
       var canvas = document.getElementById('canvas'),
         c = canvas.getContext("2d"),

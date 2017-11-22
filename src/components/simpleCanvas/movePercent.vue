@@ -76,8 +76,7 @@
         if (angle > (percent / 100 * 360)) {
           percentAge = percent
           window.cancelAnimationFrame(timer);
-        }
-        ;
+        };
         ctx_2.stroke();
         ctx_2.closePath();
         ctx_2.save();
