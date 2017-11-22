@@ -3,3 +3,5 @@
 #### git clone https://github.com/milko1991/vuedemo.git
 #### npm install 下载完所有依赖
 #### npm run dev
+
+####汇集canvas特效，axios测试方法，以及vue其它各类属性和方法等测试页面。持续更新中。
