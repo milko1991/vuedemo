@@ -1,6 +1,6 @@
 <template>
 	<div id="news">
-    <div v-show="false">
+    <div v-show="">
       <input v-model.number="number" type="number" step="20" />
       <p>{{ animatedNumber }}</p>
     </div>
@@ -40,7 +40,7 @@
 
     },
     components: {
-		  'vueSimple' : vueSimple
+		  vueSimple
     }
 	})
 </script>

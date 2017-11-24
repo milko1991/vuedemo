@@ -7,6 +7,7 @@
 				<button @click="btnSearch">百度一下</button>
 			</div>
 		</nav>
+    <youxin v-show="" class="youxin">test</youxin>
 		<div class="scrollSearch animated" :class="{'fadeIn': scrollShow}" v-show="scrollShow">
 			<img src="../images/baidu.png" width="150" />
 		</div>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+
 	import Componentviewlist from '../components/componentList.vue'
 	export default {
 		data() {
@@ -42,6 +44,8 @@
 				}]
 			}
 		},
+    created(){
+    },
 		components: {
 			'componentViewlist': Componentviewlist
 		},
@@ -93,7 +97,3 @@
 		}
 	};
 </script>
-
-<style>
-
-</style>

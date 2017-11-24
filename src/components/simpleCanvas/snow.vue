@@ -51,10 +51,13 @@
         var c1 = document.getElementById('canimg'), $2 = c1.getContext("2d");
         $2.clearRect(0, 0, c1.width, c1.height)
         var imgs = new Image();
+        var imgs1 = new Image();
         imgs.src = this.imgsrc;
+        imgs1.src = '../../static/snowMan.png';
         let that = this;
         imgs.onload = function () {
-          $2.drawImage(imgs, 0, 0, 860, 500)
+          $2.drawImage(imgs, 0, 0, 860, 500);
+          $2.drawImage(imgs1, 300, 200, 381, 300)
           // debugger
           that.canvasInit();
         }
@@ -85,6 +88,7 @@
           function go() {
             that.timer = requestAnimationFrame(go);
             $.clearRect(0, 0, w, h);
+
             for (var i = 0; i < arr.length; ++i) {
               f = arr[i];
               f.t += .05;
