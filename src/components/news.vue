@@ -6,6 +6,7 @@
         <img :src="getImage(article.images.medium)"/>
       </li>
     </ul>
+    <!--<a href="#/map">111</a>-->
     <span style="margin: 10px 20px 10px 20px" v-for="titles in moviesTitle">
       {{titles.title}}
     </span>
@@ -72,6 +73,19 @@
     created() {
     },
     mounted() {
+      var html = '';
+      for(let i = 0; i < 10; i++){
+        for(let y = 0; y <= i; y ++){
+          if(y == i){
+            html += i + " * " + y + " = " + ( i * y );
+          }else {
+            html += i + " * " + y + " = " + ( i * y ) + ',  ';
+          }
+        }
+        html +="\n"
+      }
+      console.log('啦啦啦，乘法口诀表\n' + html)
+
       //链接外网网址取得页面数据
       this.fetchData();
       //获取本地Json数据
@@ -131,6 +145,9 @@
         })
       },
       getPromise(){
+
+
+
         const promise = new Promise(function (resolve, reject) {
           const image = new Image();
           image.onload = function () {

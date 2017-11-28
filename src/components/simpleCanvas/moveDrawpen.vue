@@ -1,6 +1,5 @@
 <template>
     <div>
-      <p>142151<br/>5151515</p>
       <div id="tool" style="display: inline-block;" ref="tools">
         <div id="bgselect">
           背景颜色

@@ -1,7 +1,7 @@
 <template>
     <div>
       <h2 class="tx-c">filter过滤器</h2>
-       字母前后转换：<span>{{message | reverse}}</span>
+       字母前后转换：<span>{{message}} {{message | reverse}}</span>
     </div>
 </template>
 
