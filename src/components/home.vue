@@ -1,13 +1,12 @@
 <template>
 	<div>
-		<nav class="clear" id="navHome">
+		<nav id="navHome">
 			<img src="../images/baidu.png" class="logo" />
 			<div class="search-input">
 				<input type="text" value="" placeholder="" v-model="searchInput" />
 				<button @click="btnSearch">百度一下</button>
 			</div>
 		</nav>
-    <youxin v-show="" class="youxin">test</youxin>
 		<div class="scrollSearch animated" :class="{'fadeIn': scrollShow}" v-show="scrollShow">
 			<img src="../images/baidu.png" width="150" />
 		</div>
@@ -20,8 +19,10 @@
 	</div>
 </template>
 
-<script>
+<style scoped="">
+</style>
 
+<script>
 	import Componentviewlist from '../components/componentList.vue'
 	export default {
 		data() {

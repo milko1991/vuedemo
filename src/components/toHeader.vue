@@ -40,6 +40,8 @@
           },{
             title: 'CANVAS' , hrefLink : '/canvas'
           },{
+            title: 'VUEMATERIAL', hrefLink : '/vuematerial'
+          },{
             title: 'MORE', hrefLink : '/more'
           }
 
