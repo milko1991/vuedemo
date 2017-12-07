@@ -39,7 +39,7 @@
 				<strong>实时热点</strong>
 				<ul>
 					<li v-for="list in recomRightList"><a :href="list.href">{{list.title}}</a></li>
-				</ul>				
+				</ul>
 			</div>
 		</div>
 		<div v-if="propsHomeList == 'child3'" >
@@ -52,7 +52,7 @@
 	export default({
 		data() {
 			return {
-				
+
 			}
 		},
 		props: {

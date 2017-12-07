@@ -2,7 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import VueMaterial from 'vue-material'
+import resource from 'vue-resource'
+import VueMaterial from '../static/script/vue-material.js'
 import App from './App.vue'
 import store from './store/index.js'
 import '../static/script/base'
@@ -23,6 +24,7 @@ import './assets/vueMaterial/icon.css'
 //import '!style-loader!css-loader!less-loader!./style/style.less'
 
 Vue.use(VueRouter)
+Vue.use(resource)
 Vue.use(VueMaterial)
 
 

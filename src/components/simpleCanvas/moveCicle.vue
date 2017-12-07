@@ -15,7 +15,6 @@
     data() {
       return {
         timer: '',
-        people:['三姑','四婶','五叔','六姨','七舅姥爷']
       }
     },
     beforeDestroy() {

@@ -10,7 +10,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -27,7 +26,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'jquery': 'jquery' 
+      'jquery': 'jquery'
     }
   },
   module: {

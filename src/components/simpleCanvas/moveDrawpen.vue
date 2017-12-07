@@ -49,6 +49,7 @@
     /*-webkit-box-shadow: 0px 0px 10px #ccc;
           box-shadow: -5px -5px 10px #ccc;*/
     border:1px solid #ccc;
+    background: white;
   }
   #tool div{
     padding:10px; font-size: 14px; cursor: pointer;

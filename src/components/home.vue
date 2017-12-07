@@ -3,13 +3,18 @@
 		<nav id="navHome">
 			<img src="../images/baidu.png" class="logo" />
 			<div class="search-input">
-				<input type="text" value="" placeholder="" v-model="searchInput" />
+				<input type="text" value="" placeholder="" v-model="searchInput" @keyup.enter="btnSearch" />
 				<button @click="btnSearch">百度一下</button>
 			</div>
 		</nav>
-		<div class="scrollSearch animated" :class="{'fadeIn': scrollShow}" v-show="scrollShow">
-			<img src="../images/baidu.png" width="150" />
-		</div>
+    <div class="searchNav">
+      <div class="scrollSearch animated" :class="{'fadeIn': scrollShow}" v-show="scrollShow">
+        <img src="../images/baidu.png" width="150" />
+      </div>
+      <ul>
+        <li v-for="value in myData">{{value}}</li>
+      </ul>
+    </div>
 		<div class="pageList">
 			<ul class="listUl">
 				<li @click="toggleList(index,listview.view)" v-for="(listview,index) in pageList" :class="{active: active == index}">{{listview.title}}</li>
@@ -24,13 +29,15 @@
 
 <script>
 	import Componentviewlist from '../components/componentList.vue'
+  import http from 'http'
 	export default {
 		data() {
 			return {
 				searchInput: '',
 				toshow: '',
 				scroll: '',
-				currentView: 'child2',
+        myData:[],
+        currentView: 'child2',
 				scrollShow: false,
 				active: 1,
 				pageList: [{
@@ -74,10 +81,14 @@
 		},
 		methods: {
 			btnSearch() {
-				this.$http.get({
+        this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+ this.searchInput,{
+          jsonp:'cb',
+        }).then(function(data){
+          this.myData=data.data.s;
+        },function(){
 
-				})
-			},
+        })
+      },
 			screenTop() {
 				this.scroll = document.documentElement.scrollTop;
 				if(this.scroll >= 160) {

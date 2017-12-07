@@ -19,13 +19,14 @@
   import Movedrawpen from './simpleCanvas/moveDrawpen.vue'
   import ThreeOne from './simpleCanvas/three_one.vue'
   import Snow from './simpleCanvas/snow.vue'
+  import PointLine from './simpleCanvas/moveBallCicle.vue'
   export default ({
     data() {
       return {
-        active: 5,
-        vueName: 'threeOne',
+        active: 6,
+        vueName: 'moveBallCicle',
         simpleList: [
-          'movecicle','moveffect','movepercent','movedrawpen','snow','threeOne'
+          'movecicle','moveffect','movepercent','movedrawpen','snow','threeOne','moveBallCicle'
         ]
       }
     },
@@ -35,7 +36,8 @@
       'movepercent': Movepercent,
       'movedrawpen': Movedrawpen,
       'snow': Snow,
-      'threeOne':ThreeOne
+      'threeOne':ThreeOne,
+      'moveBallCicle':PointLine
     },
     updated(){
      //
