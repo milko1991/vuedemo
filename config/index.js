@@ -39,13 +39,20 @@ module.exports = {
           '^/api': ''
         }
       },
+      '/ndn': {
+        target: 'http://www.niudana.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/ndn': ''
+        }
+      },
       '/ygdy' : {
         target: 'http://www.ygdy8.net',
         changeOrigin: true,
         pathRewrite: {
           '^/ygdy': ''
         }
-      }
+      },
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

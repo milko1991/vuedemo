@@ -43,6 +43,10 @@
     padding: 0 10px;
     border-bottom: 1px double #b8b8b8;
   }
+  #navHome ul li:hover {
+    background: #e8eaf6;
+    cursor: pointer;
+  }
   .active {
     background: #EEEEEE;
   }
@@ -62,9 +66,9 @@
         now:-1,
         ulsLi: 'ulsLi',
         myDataShows: true,
-        currentView: 'child2',
+        currentView: 'child3',
 				scrollShow: false,
-				active: 1,
+				active: 2,
 				pageList: [{
 					title: '我的工作',
 					view: 'child1'
@@ -141,48 +145,50 @@
       },
       changeDown:function(){
         this.now++;
-        if(this.now > this.messages.length){
-          return this.now = this.messages.length;
+        if(this.now >= this.messages.length){
+          return this.now = this.messages.length - 1;
         }
         $("li[data-list='" + this.ulsLi + this.now + "']").addClass('active').siblings().removeClass('active');
         this.msg=this.messages[this.now];
       },
       changeUp:function(){
         this.now--;
-        if(this.now < -1){
+        if(this.now < 0){
          return this.now = 0;
         }
+        debugger
         $("li[data-list='" + this.ulsLi + this.now + "']").addClass('active').siblings().removeClass('active');
         this.msg=this.messages[this.now];
       },
       change:function(index){
-        this.now=index;
-        this.msg=this.messages[this.now];
+        this.now = index;
+        this.msg = this.messages[this.now];
       },
       setSeachnav(el){
         this.msg = el;
+        this.myDataShows = false;
       },
       closeData(el){
         this.myDataShows = el;
-      }
-    },
-    screenTop() {
-				this.scroll = document.documentElement.scrollTop;
-				if(this.scroll >= 160) {
+      },
+      screenTop() {
+        this.scroll = document.documentElement.scrollTop;
+        if(this.scroll >= 160) {
           this.myDataShows = false;
-					$('.search-input').css({
-						'position': 'fixed',
-						'top': '20px'
-					});
-					this.scrollShow = true
-				} else {
-					$('.search-input').css({'position': 'relative','top': '0'});
-					this.scrollShow = false
-				}
-			},
-			toggleList(i, v) {
-				this.active = i;
-				this.currentView = v;
-			}
+          $('.search-input').css({
+            'position': 'fixed',
+            'top': '20px'
+          });
+          this.scrollShow = true
+        } else {
+          $('.search-input').css({'position': 'relative','top': '0'});
+          this.scrollShow = false
+        }
+      },
+      toggleList(i, v) {
+        this.active = i;
+        this.currentView = v;
+      }
+    }
 	}
 </script>
