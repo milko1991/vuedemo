@@ -5,6 +5,10 @@ Vue.use(Vuex);
 
 const state = {
 	numbers : [],
+  logins : {
+	  userName : 'admin',
+    passWord : 'admin'
+  },
 	homeState : {
 		name: 'milko',
 		age: '25',

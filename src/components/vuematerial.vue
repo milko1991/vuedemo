@@ -662,7 +662,13 @@
             }
           }
         },
+        mounted(){
+          window.onerror = SlyarErrors;
+        },
         methods: {
+          SlyarErrors(){
+            return true;
+          },
           getValidationClass (fieldName) {
             const field = this.$v.form[fieldName]
 

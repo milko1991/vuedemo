@@ -19,6 +19,11 @@
             <span>{{ showlist.comment }}</span>
           </li>
         </ul>
+        <div style="position: absolute; bottom: 10px; right: 20px;">
+          <md-button @click="remove" class="md-icon-button md-accent">
+            <md-icon title="注销">cancel</md-icon>
+          </md-button>
+        </div>
       </div>
 	</div>
 </template>
@@ -32,9 +37,11 @@
 				tofalse: false,
         toLink : [
           {
-            title: 'HOME', hrefLink : '/'
+            title: 'HOME', hrefLink : '/home'
           },{
             title: 'AXIOS', hrefLink : '/axios'
+          },{
+            title: 'H5SQL', hrefLink : '/h5sql'
           },{
             title: 'VUE' , hrefLink : '/map'
           },{
@@ -60,7 +67,11 @@
 		methods: {
 			toggleShow() {
 				this.moreshow = !this.moreshow;
-			}
+			},
+      remove(){
+        this.delCookie('admin');
+        this.$router.push('/login');
+      }
 		},
 		watch: {
 			moreshow(newVal) {

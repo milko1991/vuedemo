@@ -46,7 +46,7 @@
       <div class="items" v-for="items in content">
         <h3>{{items.tits}}</h3>
         <ul class="item-grid">
-          <li v-for="imgsrc in items.arr">
+          <li :title="imgsrc.subtitle" v-for="imgsrc in items.arr">
             <a target="_blank" class="Link" :href="imgsrc.href">
               <i :style="imgsrc.img"></i>
               <b>{{imgsrc.title}}</b>
@@ -191,7 +191,7 @@
               var $element = $(element);
               var sub = $(element).find(">a").text();
               var src = $element.find("i").attr('style');
-              src == undefined ?  src = "background-image:url('/images/Icon-No-Link.png')" : src = src;
+              src == undefined ? src = "background-image:url('/images/Icon-No-Link.png')" : src = src;
 
               if(tit == ''){
                 tit = $element.parents('ul').siblings('h3').text()

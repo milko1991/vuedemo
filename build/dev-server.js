@@ -5,7 +5,6 @@ const config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-
 const opn = require('opn')
 const path = require('path')
 const express = require('express')
@@ -25,6 +24,11 @@ const proxyTable = config.dev.proxyTable
 
 const app = express()
 const compiler = webpack(webpackConfig)
+
+// app.get('/', function(req,res){
+//   console.log('主页POST请求');
+//   res.send('hello get');
+// })
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,

@@ -671,6 +671,7 @@ button:focus {
 }
 .md-button-content {
   position:relative;
+  color: white;
   z-index:2
 }
 .md-card {
