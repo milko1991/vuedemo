@@ -34,13 +34,13 @@ async.waterfall([getInfoList,getImageList], function(err){
 function getInfoList(done){
 	async.forEachLimit(urlList, 10, function(item, callback){
 		//开始抓取
-		
+
 		request.get({
 			url : item,
 			encoding: null//让body 直接是buffer  -->目的是为了解决
 		}, function(err, response, body){
 			if(!err && response.statusCode == 200){
-				
+
 				var body = iconv.decode(body, 'gb2312');//返回的body 直接就是buffer 了...
 				//解析页面
 				var $ = cheerio.load(body);
@@ -49,7 +49,7 @@ function getInfoList(done){
 					var url = $(this).find("img").attr('src');
 					var idStr = url.split("-")[0];
 					var id = idStr.substr(idStr.lastIndexOf('/')+1,idStr.length);
-					
+
 					//console.log(xiaohuaUrl);//打印这个页面要抓取的url地址
 
 					/*
@@ -57,7 +57,7 @@ function getInfoList(done){
 
 						/p-1-146.html
 						http://www.xiaohuar.com/p-1-584.html
-							
+
 						有这两种 那么就让他统一一下吧
 					 */
 					//xiaohuaUrl = xiaohuaUrl.replace('http://www.xiaohuar.com', '');
@@ -96,8 +96,8 @@ function getImageList(done){
 			if(!err && response.statusCode == 200){
 				var body = iconv.decode(body, 'gb2312');//返回的body 直接就是buffer 了...
 				//解析页面
-				var $ = cheerio.load(body);	
-				
+				var $ = cheerio.load(body);
+
 				//正则获取图片链接
 				// console.log(html);
 				var photosr = $('.wallpaper').find("img").attr("src");
@@ -105,7 +105,7 @@ function getImageList(done){
 				//下载图片
 				async.forEach(photosr, function(obj, cb){
 					var imgsrc ="http://www.socwall.com"+photosr;
-					var filename = parseUrlForFileName(imgsrc); 
+					var filename = parseUrlForFileName(imgsrc);
 					downloadImg(imgsrc,filename,function(){
 						//console.log(filename + ' done');
 						cb();

@@ -56,16 +56,6 @@
               ]
             }
         },
-        mounted(){
-          var test1 = function (names) {
-            this.name = names || 'test111';
-          }
-          var test2 = function () {
-            test1.call(this,'sss')
-          }
-          var ss = new test2();
-          console.log(ss.name)
-        },
         components: {
           'slots':vueSlot,
           'install': vueInstall,

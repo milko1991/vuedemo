@@ -55,6 +55,8 @@
 <script>
 	import Componentviewlist from '../components/componentList.vue'
   import http from 'http'
+  import axios from 'axios'
+  import request from 'request'
 	export default {
 		data() {
 			return {
@@ -89,6 +91,7 @@
 		},
 		mounted() {
 			window.addEventListener('scroll', this.screenTop);
+			this.getPhoto();
 		},
 		computed: {
 			plan() {
@@ -115,6 +118,18 @@
 			}
 		},
 		methods: {
+      getPhoto(){
+        axios.get('https://gank.io/api/data/福利/10/1')
+          .then(function(res) {
+            var photoLists = [];
+            res.data.results.forEach(photo => {
+              photoLists.push(photo.url);
+            });
+          }.bind(this))
+          .catch(function(error) {
+            console.log(error);
+          });
+      },
       get:function(e){
         console.log(1)
         //保存输入框中输入的内容

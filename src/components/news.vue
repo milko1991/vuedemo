@@ -145,9 +145,6 @@
         })
       },
       getPromise(){
-
-
-
         const promise = new Promise(function (resolve, reject) {
           const image = new Image();
           image.onload = function () {
